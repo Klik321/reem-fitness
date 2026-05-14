@@ -1,12 +1,13 @@
 Place the coach photos in this folder using these exact filenames:
 
-- `hero-wide.jpg`
-- `hero-body.jpg`
-- `hoodie-portrait.jpg`
-- `side-profile.jpg`
-- `dumbbell-training.jpg`
-- `gym-portrait.jpg`
-- `crossed-arms.jpg`
+- `hero-wide.png`
+- `hero-body.png`
+- `hoodie-portrait.png`
+- `side-profile.png`
+- `dumbbell-training.png`
+- `gym-portrait.png`
+- `crossed-arms.png`
+- `testimonials-board.png`
 
 The site auto-detects each file at build/runtime.
 If a file is missing, a branded dark placeholder is rendered instead.

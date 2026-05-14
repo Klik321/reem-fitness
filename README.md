@@ -8,7 +8,7 @@ Premium Hebrew RTL landing page for a fitness coach brand, built with `Next.js 1
 - `Tailwind CSS` v4
 - `Framer Motion` for subtle reveal animations
 - `lucide-react` for lightweight iconography
-- `next/font` with `Assistant` + `Heebo`
+- Google Fonts CSS with `Assistant` + `Heebo`
 
 ## Local Run
 
@@ -34,13 +34,14 @@ Add the real coach photos into:
 
 Use these exact filenames:
 
-- `hero-wide.jpg`
-- `hero-body.jpg`
-- `hoodie-portrait.jpg`
-- `side-profile.jpg`
-- `dumbbell-training.jpg`
-- `gym-portrait.jpg`
-- `crossed-arms.jpg`
+- `hero-wide.png`
+- `hero-body.png`
+- `hoodie-portrait.png`
+- `side-profile.png`
+- `dumbbell-training.png`
+- `gym-portrait.png`
+- `crossed-arms.png`
+- `testimonials-board.png`
 
 If any file is missing, the site renders a branded dark placeholder automatically.
 

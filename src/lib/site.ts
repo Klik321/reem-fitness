@@ -5,38 +5,43 @@ export const navLinks = [
   { href: "#services", label: "שירותים" },
   { href: "#transformation", label: "שינוי" },
   { href: "#gallery", label: "גלריה" },
+  { href: "#testimonials", label: "המלצות" },
   { href: "#process", label: "תהליך" },
   { href: "#contact", label: "צור קשר" },
 ];
 
 export const coachMedia = {
   heroWide: {
-    src: "images/reem/hero-wide.jpg",
+    src: "images/reem/hero-wide.png",
     alt: "Reem Fitness wide hero banner",
   },
   sideProfile: {
-    src: "images/reem/side-profile.jpg",
+    src: "images/reem/side-profile.png",
     alt: "Reem side profile pose",
   },
   hoodiePortrait: {
-    src: "images/reem/hoodie-portrait.jpg",
+    src: "images/reem/hoodie-portrait.png",
     alt: "Reem portrait with hoodie",
   },
   dumbbellTraining: {
-    src: "images/reem/dumbbell-training.jpg",
+    src: "images/reem/dumbbell-training.png",
     alt: "Reem training with dumbbell",
   },
   heroBody: {
-    src: "images/reem/hero-body.jpg",
+    src: "images/reem/hero-body.png",
     alt: "Reem full body hero portrait",
   },
   gymPortrait: {
-    src: "images/reem/gym-portrait.jpg",
+    src: "images/reem/gym-portrait.png",
     alt: "Reem portrait inside the gym",
   },
   crossedArms: {
-    src: "images/reem/crossed-arms.jpg",
+    src: "images/reem/crossed-arms.png",
     alt: "Reem crossed arms portrait",
+  },
+  testimonialsBoard: {
+    src: "images/reem/testimonials-board.png",
+    alt: "Reem testimonials board",
   },
 };
 
@@ -94,7 +99,7 @@ export const serviceHighlights = [
 export const transformationPoints = [
   {
     title: "תוכנית מותאמת אישית",
-    description: "כל שלב נבנה לפי הגוף, המטרה והלו\"ז שלך.",
+    description: 'כל שלב נבנה לפי הגוף, המטרה והלו"ז שלך.',
   },
   {
     title: "עקביות לפני קיצורי דרך",
@@ -144,13 +149,8 @@ export const processSteps = [
 export const testimonials = [
   {
     quote:
-      "המשמעת, הידע והיחס האישי של רים עשו לי סדר. התחזקתי, ירדתי באחוזי שומן והפכתי לגרסה הכי טובה של עצמי.",
-    name: "י.",
-  },
-  {
-    quote:
-      "רים לא רק מאמן, הוא מנטור. הוא יודע לדחוף אותך קדימה בדיוק כשצריך, והתוצאות מדברות בעד עצמן.",
-    name: "מ.",
+      "האימונים אצל רים שינו לי את החיים. ירדתי 12 קילו והרגשתי שינוי אמיתי בביטחון ובאנרגיה.",
+    name: "א.",
   },
   {
     quote:
@@ -159,8 +159,13 @@ export const testimonials = [
   },
   {
     quote:
-      "האימונים אצל רים שינו לי את החיים. ירדתי 12 קילו והרגשתי שינוי אמיתי בביטחון ובאנרגיה.",
-    name: "א.",
+      "רים לא רק מאמן, הוא מנטור. הוא יודע לדחוף אותך קדימה בדיוק כשצריך, והתוצאות מדברות בעד עצמן.",
+    name: "מ.",
+  },
+  {
+    quote:
+      "המשמעת, הידע והיחס האישי של רים עשו לי סדר. התחזקתי, ירדתי באחוזי שומן והפכתי לגרסה הכי טובה של עצמי.",
+    name: "י.",
   },
 ];
 
