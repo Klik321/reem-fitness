@@ -214,8 +214,8 @@ export default function Home() {
             <Reveal delay={0.22}>
               <article className="glass-card relative overflow-hidden rounded-[24px] p-6 text-right">
                 <div className="absolute inset-y-0 left-0 hidden w-2/5 bg-[linear-gradient(90deg,rgba(0,0,0,0.9),transparent)] lg:block" />
-                <div className="relative z-10 grid gap-5 lg:grid-cols-[1fr_0.9fr] lg:items-center">
-                  <div className="order-2 flex flex-col gap-4 lg:order-1">
+                <div className="relative z-10">
+                  <div className="flex max-w-2xl flex-col gap-4">
                     <p className="section-kicker">מי זה Reem?</p>
                     <h2 className="font-display text-2xl font-black text-white">
                       מאמן שבונה גוף, ביטחון ומשמעת ליום-יום.
@@ -226,14 +226,6 @@ export default function Home() {
                       שינוי שנשאר לאורך זמן.
                     </p>
                   </div>
-                  <MediaFrame
-                    media={coachMedia.hoodiePortrait}
-                    className="order-1 min-h-[260px] rounded-[20px] border-white/10 bg-black lg:order-2"
-                    sizes="(max-width: 1024px) 100vw, 25vw"
-                    objectPosition="center top"
-                    label="פורטרט עם קפוצ'ון"
-                    hint="שמור כאן פורטרט נקי לאזור ההיכרות"
-                  />
                 </div>
               </article>
             </Reveal>
