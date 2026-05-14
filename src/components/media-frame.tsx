@@ -12,9 +12,12 @@ type MediaFrameProps = {
   className?: string;
   sizes?: string;
   objectPosition?: string;
+  fit?: "cover" | "contain";
+  overlay?: "none" | "soft" | "dark";
   label?: string;
   hint?: string;
   preload?: boolean;
+  zoom?: boolean;
 };
 
 function cn(...values: Array<string | undefined>) {
@@ -26,12 +29,25 @@ export function MediaFrame({
   className,
   sizes = "100vw",
   objectPosition = "center",
+  fit = "cover",
+  overlay = "dark",
   label,
   hint,
   preload = false,
+  zoom = true,
 }: MediaFrameProps) {
   const publicPath = path.join(process.cwd(), "public", media.src);
   const hasImage = existsSync(publicPath);
+  const imageClassName =
+    fit === "contain"
+      ? "object-contain"
+      : "object-cover";
+  const overlayClassName =
+    overlay === "none"
+      ? ""
+      : overlay === "soft"
+        ? "bg-[linear-gradient(180deg,rgba(0,0,0,0.03)_0%,rgba(0,0,0,0.18)_100%)]"
+        : "bg-[linear-gradient(180deg,rgba(0,0,0,0)_25%,rgba(0,0,0,0.72)_100%)]";
 
   return (
     <div
@@ -48,13 +64,17 @@ export function MediaFrame({
           fill
           preload={preload}
           sizes={sizes}
-          className="object-cover transition duration-500 group-hover:scale-[1.03]"
+          className={cn(
+            imageClassName,
+            "transition duration-500",
+            zoom ? "group-hover:scale-[1.03]" : undefined,
+          )}
           style={{ objectPosition }}
         />
       ) : (
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_40%_20%,rgba(255,255,255,0.06),transparent_22%),radial-gradient(circle_at_80%_70%,rgba(190,24,39,0.16),transparent_26%),linear-gradient(145deg,#101010,#050505)]" />
       )}
-      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0)_25%,rgba(0,0,0,0.72)_100%)]" />
+      {overlayClassName ? <div className={cn("absolute inset-0", overlayClassName)} /> : null}
       {!hasImage ? (
         <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-3 p-4">
           <div className="rounded-full border border-white/10 bg-black/45 px-3 py-1 text-[0.68rem] text-zinc-300 backdrop-blur">

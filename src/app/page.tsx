@@ -21,6 +21,7 @@ import { ContactForm } from "@/components/contact-form";
 import { MediaFrame } from "@/components/media-frame";
 import { Reveal } from "@/components/reveal";
 import {
+  aboutStory,
   coachMedia,
   finalCtaPoints,
   navLinks,
@@ -151,11 +152,14 @@ export default function Home() {
 
             <Reveal delay={0.12}>
               <MediaFrame
-                media={coachMedia.heroBody}
-                className="min-h-[430px] rounded-[30px] border-white/10 bg-black lg:min-h-[640px]"
+                media={coachMedia.heroWide}
+                className="min-h-[340px] rounded-[30px] border-transparent bg-transparent shadow-none lg:min-h-[640px]"
                 preload
                 sizes="(max-width: 1024px) 100vw, 58vw"
-                  objectPosition="center 18%"
+                objectPosition="center center"
+                fit="contain"
+                overlay="none"
+                zoom={false}
                 label="דמות ראשית"
                 hint="שמור כאן את תמונת ה-hero המרכזית"
               />
@@ -232,6 +236,46 @@ export default function Home() {
                   />
                 </div>
               </article>
+            </Reveal>
+          </div>
+        </section>
+
+        <section id="about" className="section-frame px-5 py-10 sm:px-8 lg:px-10">
+          <div className="grid gap-6 lg:grid-cols-[1.02fr_0.98fr] lg:items-center">
+            <Reveal className="space-y-5 text-right">
+              <p className="section-kicker">מי זה Reem</p>
+              <h2 className="font-display text-3xl font-black text-white sm:text-4xl">
+                {aboutStory.title}
+              </h2>
+              <div className="space-y-4 text-base leading-8 text-zinc-300">
+                {aboutStory.paragraphs.map((paragraph) => (
+                  <p key={paragraph}>{paragraph}</p>
+                ))}
+              </div>
+              <div className="grid gap-3">
+                {aboutStory.points.map((point) => (
+                  <div
+                    key={point}
+                    className="flex items-center justify-end gap-3 rounded-[18px] border border-white/10 bg-white/[0.03] px-4 py-3"
+                  >
+                    <p className="text-sm text-zinc-100">{point}</p>
+                    <span className="icon-shell h-9 w-9 shrink-0">
+                      <BadgeCheck className="h-4 w-4" />
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </Reveal>
+
+            <Reveal delay={0.14}>
+              <MediaFrame
+                media={coachMedia.beforeAfterStory}
+                className="min-h-[420px] rounded-[28px] border-white/10 bg-black lg:min-h-[760px]"
+                sizes="(max-width: 1024px) 100vw, 48vw"
+                objectPosition="center top"
+                label="סיפור לפני ואחרי"
+                hint="שמור כאן את תמונת ה-before/after של המסע האישי"
+              />
             </Reveal>
           </div>
         </section>
