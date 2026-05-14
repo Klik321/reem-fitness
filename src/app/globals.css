@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Assistant:wght@200..800&family=Heebo:wght@100..900&display=swap");
 @import "tailwindcss";
 
 :root {
@@ -9,8 +10,8 @@
   --border: rgba(255, 255, 255, 0.12);
   --accent: #be1827;
   --accent-strong: #f21d2f;
-  --font-body: var(--font-assistant);
-  --font-display: var(--font-heebo);
+  --font-body: "Assistant";
+  --font-display: "Heebo";
 }
 
 @theme inline {
