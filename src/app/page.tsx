@@ -447,7 +447,7 @@ export default function Home() {
                       <span className="inline-flex h-14 w-14 items-center justify-center rounded-full border border-red-500/50 bg-white/5 font-display text-2xl font-black text-white">
                         {item.name}
                       </span>
-                      <p className="text-sm text-zinc-400">????? ?? ??? ?????</p>
+                      <p className="text-sm text-zinc-400">{item.name} · מתאמן של ראם פיטנס</p>
                     </div>
                   </div>
                 </article>
