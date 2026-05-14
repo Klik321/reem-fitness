@@ -434,46 +434,33 @@ export default function Home() {
             </p>
           </Reveal>
 
-          <div className="relative mt-8 grid gap-5 xl:grid-cols-[1.05fr_0.95fr]">
-            <Reveal>
-              <MediaFrame
-                media={coachMedia.testimonialsBoard}
-                className="min-h-[320px] rounded-[28px] border-white/10 bg-black lg:min-h-[620px]"
-                sizes="(max-width: 1280px) 100vw, 55vw"
-                objectPosition="center"
-                label="לוח המלצות"
-                hint="שמור כאן את תמונת ההמלצות ששלחת"
-              />
-            </Reveal>
-
-            <div className="grid gap-4 sm:grid-cols-2">
-              {testimonials.map((item, index) => (
-                <Reveal key={item.name + item.quote} delay={0.06 * index}>
-                  <article className="glass-card flex h-full flex-col rounded-[26px] border-red-500/20 p-6 text-right shadow-[0_24px_70px_rgba(0,0,0,0.3)]">
-                    <Quote className="h-10 w-10 text-red-500" />
-                    <p className="mt-6 text-lg leading-9 text-zinc-100">
-                      {item.quote}
-                    </p>
-                    <div className="mt-auto pt-6">
-                      <div className="mb-4 flex justify-end gap-1">
-                        {Array.from({ length: 5 }).map((_, starIndex) => (
-                          <Star
-                            key={starIndex}
-                            className="h-4 w-4 fill-red-500 text-red-500"
-                          />
-                        ))}
-                      </div>
-                      <div className="flex items-center justify-between gap-4 border-t border-red-500/20 pt-4">
-                        <span className="inline-flex h-14 w-14 items-center justify-center rounded-full border border-red-500/50 bg-white/5 font-display text-2xl font-black text-white">
-                          {item.name}
-                        </span>
-                        <p className="text-sm text-zinc-400">מתאמן של Reem Fitness</p>
-                      </div>
+          <div className="relative mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+            {testimonials.map((item, index) => (
+              <Reveal key={item.name + item.quote} delay={0.06 * index}>
+                <article className="glass-card flex h-full flex-col rounded-[26px] border-red-500/20 p-6 text-right shadow-[0_24px_70px_rgba(0,0,0,0.3)]">
+                  <Quote className="h-10 w-10 text-red-500" />
+                  <p className="mt-6 text-lg leading-9 text-zinc-100">
+                    {item.quote}
+                  </p>
+                  <div className="mt-auto pt-6">
+                    <div className="mb-4 flex justify-end gap-1">
+                      {Array.from({ length: 5 }).map((_, starIndex) => (
+                        <Star
+                          key={starIndex}
+                          className="h-4 w-4 fill-red-500 text-red-500"
+                        />
+                      ))}
                     </div>
-                  </article>
-                </Reveal>
-              ))}
-            </div>
+                    <div className="flex items-center justify-between gap-4 border-t border-red-500/20 pt-4">
+                      <span className="inline-flex h-14 w-14 items-center justify-center rounded-full border border-red-500/50 bg-white/5 font-display text-2xl font-black text-white">
+                        {item.name}
+                      </span>
+                      <p className="text-sm text-zinc-400">מתאמן של רים פיטנס</p>
+                    </div>
+                  </div>
+                </article>
+              </Reveal>
+            ))}
           </div>
         </section>
 
