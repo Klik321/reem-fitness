@@ -153,15 +153,15 @@ export default function Home() {
             <Reveal delay={0.12} className="lg:justify-self-start lg:self-start">
               <MediaFrame
                 media={coachMedia.heroWide}
-                className="w-full min-h-[220px] rounded-[30px] border-transparent bg-transparent shadow-none sm:min-h-[260px] lg:min-h-[330px] lg:max-w-[560px]"
+                className="w-full min-h-[280px] rounded-[30px] border border-red-500/18 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.04),transparent_42%),linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01))] shadow-[0_0_80px_rgba(190,24,39,0.12)] sm:min-h-[340px] lg:min-h-[460px] lg:max-w-[640px]"
                 preload
-                sizes="(max-width: 1024px) 100vw, 40vw"
+                sizes="(max-width: 1024px) 100vw, 46vw"
                 objectPosition="center center"
                 fit="contain"
                 overlay="none"
                 zoom={false}
-                label="דמות ראשית"
-                hint="שמור כאן את תמונת ה-hero המרכזית"
+                label="באנר ראשי"
+                hint="שמור כאן את hero-wide.png"
               />
             </Reveal>
           </div>
@@ -347,13 +347,13 @@ export default function Home() {
 
             <Reveal delay={0.16} className="order-1 lg:order-2">
               <MediaFrame
-                media={coachMedia.heroWide}
+                media={coachMedia.heroBody}
                 className="min-h-[340px] rounded-[28px] border-white/10 bg-black lg:min-h-[560px]"
                 preload
                 sizes="(max-width: 1024px) 100vw, 52vw"
-                objectPosition="center"
-                label="באנר רחב"
-                hint="שמור כאן את תמונת הבאנר הרחבה בסגנון הקיר השחור"
+                objectPosition="center top"
+                label="דמות טרנספורמציה"
+                hint="שמור כאן פורטרט גוף לאזור השינוי"
               />
             </Reveal>
           </div>
@@ -426,86 +426,34 @@ export default function Home() {
             </p>
           </Reveal>
 
-          <div className="relative mt-8 grid gap-5 xl:grid-cols-[1.05fr_0.95fr]">
-            <Reveal>
-              <MediaFrame
-                media={coachMedia.testimonialsBoard}
-                className="min-h-[320px] rounded-[28px] border-white/10 bg-black lg:min-h-[620px]"
-                sizes="(max-width: 1280px) 100vw, 55vw"
-                objectPosition="center"
-                label="לוח המלצות"
-                hint="שמור כאן את תמונת ההמלצות ששלחת"
-              />
-            </Reveal>
-
-            <div className="grid gap-4 sm:grid-cols-2">
-              {testimonials.map((item, index) => (
-                <Reveal key={item.name + item.quote} delay={0.06 * index}>
-                  <article className="glass-card flex h-full flex-col rounded-[26px] border-red-500/20 p-6 text-right shadow-[0_24px_70px_rgba(0,0,0,0.3)]">
-                    <Quote className="h-10 w-10 text-red-500" />
-                    <p className="mt-6 text-lg leading-9 text-zinc-100">
-                      {item.quote}
-                    </p>
-                    <div className="mt-auto pt-6">
-                      <div className="mb-4 flex justify-end gap-1">
-                        {Array.from({ length: 5 }).map((_, starIndex) => (
-                          <Star
-                            key={starIndex}
-                            className="h-4 w-4 fill-red-500 text-red-500"
-                          />
-                        ))}
-                      </div>
-                      <div className="flex items-center justify-between gap-4 border-t border-red-500/20 pt-4">
-                        <span className="inline-flex h-14 w-14 items-center justify-center rounded-full border border-red-500/50 bg-white/5 font-display text-2xl font-black text-white">
-                          {item.name}
-                        </span>
-                        <p className="text-sm text-zinc-400">מתאמן של Reem Fitness</p>
-                      </div>
-                    </div>
-                  </article>
-                </Reveal>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section id="process" className="section-frame px-5 py-10 sm:px-8 lg:px-10">
-          <Reveal className="text-right">
-            <p className="section-kicker">התהליך</p>
-            <h2 className="font-display text-3xl font-black text-white sm:text-4xl">
-              ארבעה שלבים. כיוון ברור. שיפור קבוע.
-            </h2>
-          </Reveal>
-
-          <div className="mt-8 grid gap-4 lg:grid-cols-4">
-            {processSteps.map((item, index) => (
-              <Reveal key={item.title} delay={0.08 * index}>
-                <article className="glass-card h-full rounded-[26px] p-6 text-right">
-                  <div className="flex items-center justify-between gap-4">
-                    <span className="font-display text-4xl font-black text-red-500/90">
-                      0{index + 1}
-                    </span>
-                    <span className="rounded-full border border-white/10 px-3 py-1 text-xs text-zinc-400">
-                      {item.kicker}
-                    </span>
-                  </div>
-                  <h3 className="mt-8 font-display text-2xl font-black text-white">
-                    {item.title}
-                  </h3>
-                  <p className="mt-3 text-sm leading-7 text-zinc-400">
-                    {item.description}
+          <div className="relative mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+            {testimonials.map((item, index) => (
+              <Reveal key={item.name + item.quote} delay={0.06 * index}>
+                <article className="glass-card flex h-full flex-col rounded-[26px] border-red-500/20 p-6 text-right shadow-[0_24px_70px_rgba(0,0,0,0.3)]">
+                  <Quote className="h-10 w-10 text-red-500" />
+                  <p className="mt-6 text-lg leading-9 text-zinc-100">
+                    {item.quote}
                   </p>
+                  <div className="mt-auto pt-6">
+                    <div className="mb-4 flex justify-end gap-1">
+                      {Array.from({ length: 5 }).map((_, starIndex) => (
+                        <Star
+                          key={starIndex}
+                          className="h-4 w-4 fill-red-500 text-red-500"
+                        />
+                      ))}
+                    </div>
+                    <div className="flex items-center justify-between gap-4 border-t border-red-500/20 pt-4">
+                      <span className="inline-flex h-14 w-14 items-center justify-center rounded-full border border-red-500/50 bg-white/5 font-display text-2xl font-black text-white">
+                        {item.name}
+                      </span>
+                      <p className="text-sm text-zinc-400">????? ?? ??? ?????</p>
+                    </div>
+                  </div>
                 </article>
               </Reveal>
             ))}
           </div>
-        </section>
-
-        <section
-          id="contact"
-          className="section-frame relative overflow-hidden px-5 py-10 sm:px-8 lg:px-10"
-        >
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(190,24,39,0.18),transparent_36%),linear-gradient(180deg,rgba(255,255,255,0.03),rgba(255,255,255,0))]" />
           <div className="relative grid gap-6 lg:grid-cols-[0.88fr_1.12fr] lg:items-center">
             <Reveal className="space-y-5 text-right">
               <p className="section-kicker">צור קשר</p>
