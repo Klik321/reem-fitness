@@ -155,7 +155,7 @@ export default function Home() {
                 className="min-h-[430px] rounded-[30px] border-white/10 bg-black lg:min-h-[640px]"
                 preload
                 sizes="(max-width: 1024px) 100vw, 58vw"
-                objectPosition="center top"
+                  objectPosition="center 18%"
                 label="דמות ראשית"
                 hint="שמור כאן את תמונת ה-hero המרכזית"
               />
