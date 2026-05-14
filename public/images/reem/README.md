@@ -7,6 +7,7 @@ Place the coach photos in this folder using these exact filenames:
 - `dumbbell-training.png`
 - `gym-portrait.png`
 - `crossed-arms.png`
+- `before-after-story.png`
 - `testimonials-board.png`
 
 The site auto-detects each file at build/runtime.

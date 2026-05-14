@@ -41,6 +41,7 @@ Use these exact filenames:
 - `dumbbell-training.png`
 - `gym-portrait.png`
 - `crossed-arms.png`
+- `before-after-story.png`
 - `testimonials-board.png`
 
 If any file is missing, the site renders a branded dark placeholder automatically.
