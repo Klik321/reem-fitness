@@ -411,6 +411,34 @@ export default function Home() {
           </div>
         </section>
 
+        <section id="process" className="section-frame px-5 py-10 sm:px-8 lg:px-10">
+          <Reveal className="text-right">
+            <p className="section-kicker">תהליך העבודה</p>
+            <h2 className="font-display text-3xl font-black text-white sm:text-4xl">
+              איך מתחילים ועובדים נכון מהיום הראשון
+            </h2>
+            <p className="mt-3 max-w-3xl text-base leading-8 text-zinc-400">
+              תהליך ברור, מסודר ואישי שמוריד רעש ומייצר התקדמות אמיתית בכל שלב.
+            </p>
+          </Reveal>
+
+          <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+            {processSteps.map((step, index) => (
+              <Reveal key={step.kicker} delay={0.06 * index}>
+                <article className="glass-card h-full rounded-[24px] p-6 text-right">
+                  <p className="section-kicker">{step.kicker}</p>
+                  <h3 className="mt-4 font-display text-2xl font-black text-white">
+                    {step.title}
+                  </h3>
+                  <p className="mt-3 text-sm leading-7 text-zinc-400">
+                    {step.description}
+                  </p>
+                </article>
+              </Reveal>
+            ))}
+          </div>
+        </section>
+
         <section
           id="testimonials"
           className="section-frame relative overflow-hidden px-5 py-10 sm:px-8 lg:px-10"
