@@ -96,12 +96,12 @@ export default function Home() {
       <main className="mx-auto flex max-w-[1380px] flex-col gap-8 px-4 pb-16 pt-4 sm:px-6 lg:gap-10 lg:px-8 lg:pt-6">
         <section
           id="home"
-          className="section-frame relative overflow-hidden px-5 py-6 sm:px-8 sm:py-8 lg:px-10 lg:py-10"
+          className="section-frame relative overflow-hidden px-5 py-6 sm:px-8 sm:py-8 lg:px-10 lg:py-6"
         >
           <div className="brick-overlay absolute inset-0 opacity-70" />
           <div className="absolute inset-y-0 left-0 hidden w-1/3 bg-[linear-gradient(90deg,rgba(0,0,0,0.68),transparent)] lg:block" />
-          <div className="relative grid gap-6 lg:grid-cols-[1.04fr_0.96fr] lg:items-end">
-            <Reveal className="flex flex-col justify-center gap-6 lg:gap-8">
+          <div className="relative grid gap-6 lg:grid-cols-[1.04fr_0.96fr] lg:items-start">
+            <Reveal className="flex flex-col justify-start gap-6 lg:gap-8">
               <div className="space-y-4 text-right">
                 <div className="flex flex-wrap items-center justify-end gap-3">
                   <span className="badge-chip">Reem Fitness</span>
@@ -138,8 +138,8 @@ export default function Home() {
 
             </Reveal>
 
-            <Reveal delay={0.12} className="lg:justify-self-start lg:self-end">
-              <div className="flex w-full min-h-[320px] items-end justify-center overflow-visible rounded-[30px] bg-transparent sm:min-h-[420px] lg:min-h-[840px] lg:max-w-[900px]">
+            <Reveal delay={0.12} className="lg:justify-self-start lg:self-start">
+              <div className="flex w-full min-h-[320px] items-start justify-center overflow-visible rounded-[30px] bg-transparent sm:min-h-[420px] lg:min-h-[760px] lg:max-w-[900px]">
                 <Image
                   src={`/${coachMedia.heroCutout.src}`}
                   alt={coachMedia.heroCutout.alt}
@@ -147,7 +147,7 @@ export default function Home() {
                   height={1080}
                   priority
                   sizes="(max-width: 1024px) 100vw, 48vw"
-                  className="h-auto max-h-[320px] w-auto object-contain object-center drop-shadow-[0_18px_80px_rgba(0,0,0,0.55)] sm:max-h-[420px] lg:max-h-[920px] lg:scale-[1.14] lg:-translate-y-6"
+                  className="h-auto max-h-[320px] w-auto object-contain object-center drop-shadow-[0_18px_80px_rgba(0,0,0,0.55)] sm:max-h-[420px] lg:max-h-[920px] lg:scale-[1.14] lg:-translate-y-1"
                 />
               </div>
             </Reveal>
