@@ -1,4 +1,5 @@
 import type { LucideIcon } from "lucide-react";
+import Image from "next/image";
 import {
   ArrowUpLeft,
   BadgeCheck,
@@ -151,16 +152,16 @@ export default function Home() {
             </Reveal>
 
             <Reveal delay={0.12} className="lg:justify-self-start lg:self-start">
-              <MediaFrame
-                media={coachMedia.heroCutout}
-                className="w-full min-h-[280px] rounded-[30px] border-transparent bg-transparent shadow-[0_0_90px_rgba(190,24,39,0.14)] sm:min-h-[340px] lg:min-h-[560px] lg:max-w-[700px]"
-                preload
-                sizes="(max-width: 1024px) 100vw, 48vw"
-                objectPosition="center bottom"
-                fit="contain"
-                overlay="none"
-                zoom={false}
-              />
+              <div className="relative w-full min-h-[280px] overflow-visible rounded-[30px] bg-transparent sm:min-h-[340px] lg:min-h-[560px] lg:max-w-[700px]">
+                <Image
+                  src={`/${coachMedia.heroCutout.src}`}
+                  alt={coachMedia.heroCutout.alt}
+                  fill
+                  priority
+                  sizes="(max-width: 1024px) 100vw, 48vw"
+                  className="object-contain object-center drop-shadow-[0_18px_80px_rgba(0,0,0,0.55)]"
+                />
+              </div>
             </Reveal>
           </div>
 
