@@ -96,21 +96,21 @@ export default function Home() {
       <main className="mx-auto flex max-w-[1380px] flex-col gap-8 px-4 pb-16 pt-4 sm:px-6 lg:gap-10 lg:px-8 lg:pt-6">
         <section
           id="home"
-          className="section-frame relative overflow-hidden px-5 py-5 sm:px-8 sm:py-7 lg:px-10 lg:py-3"
+          className="section-frame relative overflow-hidden px-5 py-6 sm:px-8 sm:py-8 lg:px-10 lg:py-6"
         >
           <div className="brick-overlay absolute inset-0 opacity-70" />
           <div className="absolute inset-y-0 left-0 hidden w-1/3 bg-[linear-gradient(90deg,rgba(0,0,0,0.68),transparent)] lg:block" />
-          <div className="relative grid gap-6 lg:grid-cols-[0.42fr_0.58fr] lg:items-start lg:gap-24">
-            <Reveal className="flex flex-col justify-start gap-5 text-right lg:pt-4">
-              <div className="max-w-[700px] space-y-5 text-right">
-                <h1 className="font-display text-4xl font-black leading-[0.98] tracking-[-0.03em] text-white sm:text-5xl lg:text-[5.15rem]">
+          <div className="relative grid gap-6 lg:grid-cols-[1.04fr_0.96fr] lg:items-start">
+            <Reveal className="flex flex-col justify-start gap-6 lg:gap-8">
+              <div className="space-y-4 text-right">
+                <h1 className="font-display text-4xl font-black leading-[1.05] text-white sm:text-5xl lg:text-[4.8rem]">
                   תבנה גוף חזק.
                   <br />
                   תבנה ביטחון.
                   <br />
                   <span className="text-red-500">תבנה משמעת.</span>
                 </h1>
-                <p className="max-w-[620px] text-base leading-8 text-zinc-300 sm:text-lg">
+                <p className="max-w-xl text-base leading-8 text-zinc-300 sm:text-lg">
                   אימונים אישיים, ליווי תזונתי ותוכנית מותאמת אישית שתעזור לך
                   להגיע לתוצאה אמיתית, עם מסלול ברור, מעקב צמוד ואפס תירוצים.
                 </p>
@@ -134,16 +134,16 @@ export default function Home() {
 
             </Reveal>
 
-            <Reveal delay={0.12} className="lg:justify-self-start lg:self-end">
-              <div className="flex w-full min-h-[300px] items-end justify-start overflow-visible rounded-[30px] bg-transparent sm:min-h-[400px] lg:min-h-[620px] lg:max-w-[520px]">
+            <Reveal delay={0.12} className="lg:justify-self-start lg:self-start">
+              <div className="flex w-full min-h-[320px] items-start justify-center overflow-visible rounded-[30px] bg-transparent sm:min-h-[420px] lg:min-h-[760px] lg:max-w-[900px]">
                 <Image
                   src={`/${coachMedia.heroCutout.src}`}
                   alt={coachMedia.heroCutout.alt}
                   width={786}
                   height={1080}
                   priority
-                  sizes="(max-width: 1024px) 100vw, 38vw"
-                  className="h-auto max-h-[300px] w-auto object-contain object-bottom drop-shadow-[0_18px_80px_rgba(0,0,0,0.55)] sm:max-h-[400px] lg:max-h-[640px] lg:translate-y-1"
+                  sizes="(max-width: 1024px) 100vw, 48vw"
+                  className="h-auto max-h-[320px] w-auto object-contain object-center drop-shadow-[0_18px_80px_rgba(0,0,0,0.55)] sm:max-h-[420px] lg:max-h-[920px] lg:scale-[1.14] lg:-translate-y-1"
                 />
               </div>
             </Reveal>
