@@ -160,7 +160,7 @@ export default function Home() {
                   height={1080}
                   priority
                   sizes="(max-width: 1024px) 100vw, 40vw"
-                  className="mx-auto h-auto max-h-[410px] w-auto object-contain object-bottom drop-shadow-[0_18px_80px_rgba(0,0,0,0.55)] sm:max-h-[500px] sm:scale-[1.06] lg:mx-0 lg:max-h-[690px] lg:scale-[1.08] lg:-translate-y-8"
+                  className="mx-auto h-auto max-h-[512px] w-auto object-contain object-bottom drop-shadow-[0_18px_80px_rgba(0,0,0,0.55)] sm:max-h-[625px] sm:scale-[1.06] lg:mx-0 lg:max-h-[862px] lg:scale-[1.08] lg:-translate-y-8"
                 />
               </div>
             </Reveal>
