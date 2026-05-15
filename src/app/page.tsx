@@ -153,7 +153,7 @@ export default function Home() {
             <Reveal delay={0.12} className="lg:justify-self-start lg:self-start">
               <MediaFrame
                 media={coachMedia.heroWide}
-                className="w-full min-h-[280px] rounded-[30px] border border-red-500/18 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.04),transparent_42%),linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01))] shadow-[0_0_80px_rgba(190,24,39,0.12)] sm:min-h-[340px] lg:min-h-[460px] lg:max-w-[640px]"
+                className="w-full min-h-[280px] rounded-[30px] bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.04),transparent_42%),linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01))] shadow-[0_0_80px_rgba(190,24,39,0.12)] sm:min-h-[340px] lg:min-h-[460px] lg:max-w-[640px]"
                 preload
                 sizes="(max-width: 1024px) 100vw, 46vw"
                 objectPosition="center center"
@@ -367,45 +367,55 @@ export default function Home() {
             </h2>
           </Reveal>
 
-          <div className="mt-8 grid gap-4 lg:grid-cols-[1.1fr_0.9fr_0.9fr]">
-            <Reveal className="lg:row-span-2">
+          <div className="mt-8 grid gap-4 lg:grid-cols-[1fr_1fr_1.15fr]">
+            <Reveal>
               <MediaFrame
-                media={coachMedia.gymPortrait}
-                className="min-h-[360px] rounded-[28px] border-white/10 bg-black lg:min-h-[640px]"
-                sizes="(max-width: 1024px) 100vw, 40vw"
+                media={coachMedia.galleryClientMale}
+                className="min-h-[280px] rounded-[24px] border-white/10 bg-black"
+                sizes="(max-width: 1024px) 100vw, 31vw"
                 objectPosition="center"
-                label="פורטרט בחדר כושר"
-                hint="תמונה רחבה לאווירת המותג"
+                label="אימון אישי צמוד"
+                hint="ראם מוביל מתאמן בכל חזרה"
               />
             </Reveal>
             <Reveal delay={0.08}>
               <MediaFrame
-                media={coachMedia.sideProfile}
-                className="min-h-[260px] rounded-[24px] border-white/10 bg-black"
-                sizes="(max-width: 1024px) 100vw, 25vw"
-                objectPosition="center top"
-                label="פרופיל צד"
-                hint="תמונת פרופיל דרמטית"
-              />
-            </Reveal>
-            <Reveal delay={0.12}>
-              <MediaFrame
-                media={coachMedia.crossedArms}
-                className="min-h-[260px] rounded-[24px] border-white/10 bg-black"
-                sizes="(max-width: 1024px) 100vw, 25vw"
-                objectPosition="center top"
-                label="ידיים משולבות"
-                hint="פורטרט עם לוגו רקע"
-              />
-            </Reveal>
-            <Reveal delay={0.16} className="lg:col-span-2">
-              <MediaFrame
-                media={coachMedia.heroWide}
-                className="min-h-[260px] rounded-[24px] border-white/10 bg-black"
-                sizes="(max-width: 1024px) 100vw, 60vw"
+                media={coachMedia.galleryClientFemaleSquat}
+                className="min-h-[280px] rounded-[24px] border-white/10 bg-black"
+                sizes="(max-width: 1024px) 100vw, 31vw"
                 objectPosition="center"
-                label="באנר מיתוג"
-                hint="מתאים לאזורי hero ומוטיבציה"
+                label="דיוק וטכניקה"
+                hint="ליווי בזמן אמת ותשומת לב לפרטים"
+              />
+            </Reveal>
+            <Reveal delay={0.12} className="lg:row-span-2">
+              <MediaFrame
+                media={coachMedia.galleryLatPulldown}
+                className="min-h-[360px] rounded-[28px] border-white/10 bg-black lg:min-h-[580px]"
+                sizes="(max-width: 1024px) 100vw, 36vw"
+                objectPosition="center top"
+                label="הכוונה בכל תנועה"
+                hint="אימון שמחבר משמעת, התמדה ותוצאה"
+              />
+            </Reveal>
+            <Reveal delay={0.16}>
+              <MediaFrame
+                media={coachMedia.gallerySeatedRow}
+                className="min-h-[380px] rounded-[24px] border-white/10 bg-black"
+                sizes="(max-width: 1024px) 100vw, 31vw"
+                objectPosition="center top"
+                label="קואצ'ינג ממוקד"
+                hint="שליטה בתנועה וביצוע איכותי"
+              />
+            </Reveal>
+            <Reveal delay={0.2}>
+              <MediaFrame
+                media={coachMedia.gallerySingleArmRow}
+                className="min-h-[380px] rounded-[24px] border-white/10 bg-black"
+                sizes="(max-width: 1024px) 100vw, 31vw"
+                objectPosition="center top"
+                label="ליווי אחד על אחד"
+                hint="אימון אישי עם נוכחות חזקה"
               />
             </Reveal>
           </div>

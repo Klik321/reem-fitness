@@ -40,6 +40,26 @@ export const coachMedia = {
     src: "images/reem/crossed-arms.png",
     alt: "Reem crossed arms portrait",
   },
+  galleryClientMale: {
+    src: "images/reem/gallery-client-male.png",
+    alt: "Reem coaching a male client in the gym",
+  },
+  galleryClientFemaleSquat: {
+    src: "images/reem/gallery-client-female-squat.png",
+    alt: "Reem coaching a female client during a squat",
+  },
+  gallerySeatedRow: {
+    src: "images/reem/gallery-seated-row.png",
+    alt: "Reem coaching a client on a seated row machine",
+  },
+  gallerySingleArmRow: {
+    src: "images/reem/gallery-single-arm-row.png",
+    alt: "Reem coaching a client during a dumbbell row",
+  },
+  galleryLatPulldown: {
+    src: "images/reem/gallery-lat-pulldown.png",
+    alt: "Reem coaching a client during a lat pulldown",
+  },
   beforeAfterStory: {
     src: "images/reem/before-after-story.png",
     alt: "Reem before and after transformation story",
