@@ -75,7 +75,7 @@ export default function Home() {
     <div className="relative overflow-hidden">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.08),transparent_30%),radial-gradient(circle_at_22%_18%,rgba(190,24,39,0.18),transparent_24%),radial-gradient(circle_at_80%_0%,rgba(190,24,39,0.16),transparent_20%)]" />
       <header className="sticky top-0 z-50 border-b border-white/8 bg-black/55 backdrop-blur-xl">
-        <div className="mx-auto flex max-w-[1380px] items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-8">
+        <div className="mx-auto flex max-w-[1200px] items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-8">
           <a href="#home" className="flex items-center gap-3">
             <span className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/5 shadow-[0_0_30px_rgba(190,24,39,0.18)]">
               <span className="font-display text-lg font-black tracking-[0.25em] text-white">
@@ -110,30 +110,30 @@ export default function Home() {
         </div>
       </header>
 
-      <main className="mx-auto flex max-w-[1380px] flex-col gap-8 px-4 pb-16 pt-4 sm:px-6 lg:gap-10 lg:px-8 lg:pt-6">
+      <main className="mx-auto flex max-w-[1200px] flex-col gap-10 px-4 pb-20 pt-4 sm:px-6 lg:gap-12 lg:px-8 lg:pt-6">
         <section
           id="home"
-          className="section-frame relative overflow-hidden px-5 py-6 sm:px-8 sm:py-8 lg:px-10 lg:py-6"
+          className="section-frame relative overflow-hidden px-6 py-6 sm:px-10 sm:py-10 lg:px-12 lg:py-10"
         >
           <div className="brick-overlay absolute inset-0 opacity-70" />
           <div className="absolute inset-y-0 left-0 hidden w-1/3 bg-[linear-gradient(90deg,rgba(0,0,0,0.68),transparent)] lg:block" />
-          <div className="relative grid gap-6 lg:grid-cols-[1.04fr_0.96fr] lg:items-start">
-            <Reveal className="flex flex-col justify-start gap-6 lg:gap-8">
-              <div className="space-y-4 text-right">
-                <h1 className="font-display text-4xl font-black leading-[1.05] text-white sm:text-5xl lg:text-[4.8rem]">
+          <div className="relative grid gap-8 lg:grid-cols-[0.6fr_0.4fr] lg:items-end lg:gap-24">
+            <Reveal className="flex flex-col justify-end gap-6 lg:gap-9 lg:pb-10">
+              <div className="mr-auto max-w-[640px] space-y-5 text-right">
+                <h1 className="font-display text-4xl font-black leading-[0.98] tracking-[-0.03em] text-white sm:text-5xl lg:text-[5.1rem]">
                   תבנה גוף חזק.
                   <br />
                   תבנה ביטחון.
                   <br />
                   <span className="text-red-500">תבנה משמעת.</span>
                 </h1>
-                <p className="max-w-xl text-base leading-8 text-zinc-300 sm:text-lg">
+                <p className="max-w-[620px] text-base leading-8 text-zinc-300 sm:text-lg">
                   אימונים אישיים, ליווי תזונתי ותוכנית מותאמת אישית שתעזור לך
                   להגיע לתוצאה אמיתית, עם מסלול ברור, מעקב צמוד ואפס תירוצים.
                 </p>
               </div>
 
-              <div className="flex flex-col gap-3 sm:flex-row sm:justify-end">
+              <div className="mr-auto flex flex-col gap-3 sm:flex-row sm:justify-end">
                 <a href="#contact" className="btn-primary">
                   <span>התחל עכשיו</span>
                   <ArrowUpLeft className="h-4 w-4" />
@@ -151,16 +151,16 @@ export default function Home() {
 
             </Reveal>
 
-            <Reveal delay={0.12} className="lg:justify-self-start lg:self-start">
-              <div className="flex w-full min-h-[320px] items-start justify-center overflow-visible rounded-[30px] bg-transparent sm:min-h-[420px] lg:min-h-[760px] lg:max-w-[900px]">
+            <Reveal delay={0.12} className="lg:justify-self-start lg:self-end">
+              <div className="flex w-full min-h-[320px] items-end justify-start overflow-visible rounded-[30px] bg-transparent sm:min-h-[420px] lg:min-h-[700px] lg:max-w-[560px] lg:pr-4">
                 <Image
                   src={`/${coachMedia.heroCutout.src}`}
                   alt={coachMedia.heroCutout.alt}
                   width={786}
                   height={1080}
                   priority
-                  sizes="(max-width: 1024px) 100vw, 48vw"
-                  className="h-auto max-h-[320px] w-auto object-contain object-center drop-shadow-[0_18px_80px_rgba(0,0,0,0.55)] sm:max-h-[420px] lg:max-h-[920px] lg:scale-[1.14] lg:-translate-y-1"
+                  sizes="(max-width: 1024px) 100vw, 40vw"
+                  className="h-auto max-h-[320px] w-auto object-contain object-bottom drop-shadow-[0_18px_80px_rgba(0,0,0,0.55)] sm:max-h-[420px] lg:max-h-[720px] lg:scale-[1.03]"
                 />
               </div>
             </Reveal>
@@ -471,7 +471,7 @@ export default function Home() {
           <div className="relative mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
             {testimonials.map((item, index) => (
               <Reveal key={item.name + item.quote} delay={0.06 * index}>
-                <article className="glass-card flex h-full flex-col rounded-[26px] border-red-500/20 p-6 text-right shadow-[0_24px_70px_rgba(0,0,0,0.3)]">
+                <article className="glass-card group flex h-full min-h-[340px] flex-col rounded-[26px] border border-white/10 p-6 text-right shadow-[0_24px_70px_rgba(0,0,0,0.3)]">
                   <Quote className="h-10 w-10 text-red-500" />
                   <p className="mt-6 text-lg leading-9 text-zinc-100">
                     {item.quote}
@@ -496,7 +496,10 @@ export default function Home() {
               </Reveal>
             ))}
           </div>
-          <div className="relative mx-auto mt-10 w-full max-w-[1100px] overflow-hidden rounded-[30px] border border-red-950/70 bg-[linear-gradient(180deg,rgba(24,24,27,0.94),rgba(10,10,12,0.98))] px-7 py-8 shadow-[0_0_0_1px_rgba(255,255,255,0.02),0_30px_80px_rgba(0,0,0,0.35)] sm:px-10 sm:py-10 lg:px-16 lg:py-14">
+        </section>
+
+        <section id="contact" className="section-frame relative overflow-hidden px-5 py-10 sm:px-8 lg:px-10">
+          <div className="relative mx-auto w-full max-w-[1100px] overflow-hidden rounded-[30px] border border-red-950/70 bg-[linear-gradient(180deg,rgba(24,24,27,0.94),rgba(10,10,12,0.98))] px-7 py-8 shadow-[0_0_0_1px_rgba(255,255,255,0.02),0_30px_80px_rgba(0,0,0,0.35)] sm:px-10 sm:py-10 lg:px-16 lg:py-14">
             <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.02),transparent_28%),radial-gradient(circle_at_bottom,rgba(190,24,39,0.12),transparent_30%)]" />
             <div className="relative text-center">
               <Reveal className="mx-auto max-w-[760px]">
@@ -517,7 +520,7 @@ export default function Home() {
 
                   return (
                     <Reveal key={item.title} delay={0.06 * index}>
-                      <article className="rounded-[22px] border border-white/10 bg-white/[0.035] px-5 py-5 text-center shadow-[inset_0_1px_0_rgba(255,255,255,0.02)] lg:px-6">
+                      <article className="h-full rounded-[22px] border border-white/10 bg-white/[0.035] px-5 py-5 text-center shadow-[inset_0_1px_0_rgba(255,255,255,0.02)] lg:px-6">
                         <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full border border-red-500/30 bg-red-500/10 text-red-500">
                           <Icon className="h-5 w-5" />
                         </div>

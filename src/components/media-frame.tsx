@@ -52,11 +52,11 @@ export function MediaFrame({
   return (
     <div
       className={cn(
-        "group relative overflow-hidden border shadow-[0_30px_80px_rgba(0,0,0,0.34)]",
+        "group relative overflow-hidden border border-white/10 shadow-[0_30px_80px_rgba(0,0,0,0.34)] transition duration-300 hover:-translate-y-1 hover:border-red-500/28 hover:shadow-[0_36px_90px_rgba(0,0,0,0.42)]",
         className,
       )}
     >
-      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0),rgba(0,0,0,0.4))]" />
+      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0),rgba(0,0,0,0.42))]" />
       {hasImage ? (
         <Image
           src={`/${media.src}`}
@@ -66,7 +66,7 @@ export function MediaFrame({
           sizes={sizes}
           className={cn(
             imageClassName,
-            "transition duration-500",
+            "transition duration-500 ease-out saturate-[0.96]",
             zoom ? "group-hover:scale-[1.03]" : undefined,
           )}
           style={{ objectPosition }}
@@ -74,7 +74,7 @@ export function MediaFrame({
       ) : (
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_40%_20%,rgba(255,255,255,0.06),transparent_22%),radial-gradient(circle_at_80%_70%,rgba(190,24,39,0.16),transparent_26%),linear-gradient(145deg,#101010,#050505)]" />
       )}
-      {overlayClassName ? <div className={cn("absolute inset-0", overlayClassName)} /> : null}
+      {overlayClassName ? <div className={cn("absolute inset-0 transition duration-300 group-hover:opacity-90", overlayClassName)} /> : null}
       {!hasImage ? (
         <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-3 p-4">
           <div className="rounded-full border border-white/10 bg-black/45 px-3 py-1 text-[0.68rem] text-zinc-300 backdrop-blur">

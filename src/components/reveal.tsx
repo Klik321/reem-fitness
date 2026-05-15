@@ -7,19 +7,27 @@ type RevealProps = {
   children: ReactNode;
   className?: string;
   delay?: number;
+  offset?: number;
+  duration?: number;
 };
 
-export function Reveal({ children, className, delay = 0 }: RevealProps) {
+export function Reveal({
+  children,
+  className,
+  delay = 0,
+  offset = 22,
+  duration = 0.62,
+}: RevealProps) {
   const reduceMotion = useReducedMotion();
 
   return (
     <motion.div
       className={className}
-      initial={reduceMotion ? undefined : { opacity: 0, y: 28 }}
-      whileInView={reduceMotion ? undefined : { opacity: 1, y: 0 }}
+      initial={reduceMotion ? { opacity: 0 } : { opacity: 0, y: offset }}
+      whileInView={reduceMotion ? { opacity: 1 } : { opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.25 }}
       transition={{
-        duration: 0.7,
+        duration,
         delay,
         ease: [0.22, 1, 0.36, 1],
       }}
