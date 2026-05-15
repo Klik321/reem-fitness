@@ -152,7 +152,7 @@ export default function Home() {
             </Reveal>
 
             <Reveal delay={0.12} className="lg:justify-self-start lg:self-end">
-              <div className="flex w-full min-h-[320px] items-end justify-start overflow-visible rounded-[30px] bg-transparent sm:min-h-[420px] lg:min-h-[700px] lg:max-w-[560px] lg:pr-4">
+              <div className="flex w-full min-h-[430px] items-end justify-center overflow-visible rounded-[30px] bg-transparent sm:min-h-[520px] lg:min-h-[640px] lg:max-w-[560px] lg:justify-start lg:pr-4">
                 <Image
                   src={`/${coachMedia.heroCutout.src}`}
                   alt={coachMedia.heroCutout.alt}
@@ -160,7 +160,7 @@ export default function Home() {
                   height={1080}
                   priority
                   sizes="(max-width: 1024px) 100vw, 40vw"
-                  className="h-auto max-h-[320px] w-auto object-contain object-bottom drop-shadow-[0_18px_80px_rgba(0,0,0,0.55)] sm:max-h-[420px] lg:max-h-[720px] lg:scale-[1.03]"
+                  className="mx-auto h-auto max-h-[410px] w-auto object-contain object-bottom drop-shadow-[0_18px_80px_rgba(0,0,0,0.55)] sm:max-h-[500px] sm:scale-[1.06] lg:mx-0 lg:max-h-[690px] lg:scale-[1.08] lg:-translate-y-8"
                 />
               </div>
             </Reveal>
