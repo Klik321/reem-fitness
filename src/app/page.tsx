@@ -24,7 +24,6 @@ import { Reveal } from "@/components/reveal";
 import {
   aboutStory,
   coachMedia,
-  finalCtaPoints,
   navLinks,
   phoneNumber,
   processSteps,
@@ -51,6 +50,24 @@ const valueIcons: LucideIcon[] = [
   HeartPulse,
   TrendingUp,
   Sparkles,
+];
+
+const contactBenefits = [
+  {
+    icon: Target,
+    title: "תוכנית מותאמת אישית",
+    description: "תוכנית אימונים ותזונה מותאמת בדיוק למטרה, לקצב ולאורח החיים שלך.",
+  },
+  {
+    icon: ShieldCheck,
+    title: "ליווי ותמיכה לאורך הדרך",
+    description: "מעקב רציף, דיוק ותמיכה שנותנים לך גב אמיתי גם בימים עמוסים.",
+  },
+  {
+    icon: TrendingUp,
+    title: "תוצאות שמחזיקות מעמד",
+    description: "בונים בסיס חזק של הרגלים, משמעת ושינוי שנשאר לאורך זמן.",
+  },
 ];
 
 export default function Home() {
@@ -479,49 +496,43 @@ export default function Home() {
               </Reveal>
             ))}
           </div>
-          <div className="relative grid gap-6 lg:grid-cols-[0.88fr_1.12fr] lg:items-center">
-            <Reveal className="space-y-5 text-right">
-              <p className="section-kicker">צור קשר</p>
-              <h2 className="font-display text-3xl font-black text-white sm:text-4xl">
-                מוכן להתחיל את השינוי שלך?
-              </h2>
-              <p className="text-base leading-8 text-zinc-300">
-                אם אתה רוצה מסלול אישי שמחבר אימון, תזונה ומשמעת למערכת אחת
-                שעובדת, זה הזמן לשלוח הודעה ולהתחיל לזוז.
-              </p>
-              <div className="space-y-3">
-                {finalCtaPoints.map((item) => (
-                  <div
-                    key={item}
-                    className="flex items-center justify-end gap-3 rounded-[18px] border border-white/10 bg-white/[0.03] px-4 py-3"
-                  >
-                    <p className="text-sm text-zinc-200">{item}</p>
-                    <span className="icon-shell h-9 w-9 shrink-0">
-                      <BadgeCheck className="h-4 w-4" />
-                    </span>
-                  </div>
-                ))}
-              </div>
-              <div className="flex flex-col gap-3 sm:flex-row sm:justify-end">
-                <a
-                  href={whatsappHref}
-                  className="btn-primary"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <MessageCircleMore className="h-4 w-4" />
-                  <span>שלח הודעה בוואטסאפ</span>
-                </a>
-                <a href={`tel:${phoneNumber}`} className="btn-secondary">
-                  <PhoneCall className="h-4 w-4 text-red-500" />
-                  <span>{phoneNumber}</span>
-                </a>
-              </div>
-            </Reveal>
+          <div className="relative mx-auto mt-10 w-full max-w-[1100px] overflow-hidden rounded-[30px] border border-red-950/70 bg-[linear-gradient(180deg,rgba(24,24,27,0.94),rgba(10,10,12,0.98))] px-7 py-8 shadow-[0_0_0_1px_rgba(255,255,255,0.02),0_30px_80px_rgba(0,0,0,0.35)] sm:px-10 sm:py-10 lg:px-16 lg:py-14">
+            <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.02),transparent_28%),radial-gradient(circle_at_bottom,rgba(190,24,39,0.12),transparent_30%)]" />
+            <div className="relative text-center">
+              <Reveal className="mx-auto max-w-[760px]">
+                <p className="section-kicker text-center">צור קשר</p>
+                <h2 className="mt-3 font-display text-4xl font-black leading-[1.02] text-white sm:text-5xl lg:text-[4.2rem]">
+                  מוכן להתחיל
+                  <br />
+                  <span className="text-red-500">את השינוי שלך?</span>
+                </h2>
+                <p className="mx-auto mt-5 max-w-[760px] text-base leading-8 text-zinc-300 sm:text-lg">
+                  שלח הודעה קצרה ונבנה לך מסלול אישי לאימונים, תזונה ותוצאות אמיתיות — בלי סיבוכים.
+                </p>
+              </Reveal>
 
-            <Reveal delay={0.12}>
-              <ContactForm phoneNumber={phoneNumber} whatsappHref={whatsappHref} />
-            </Reveal>
+              <div className="mx-auto mt-8 grid max-w-[980px] gap-4 md:grid-cols-2 xl:grid-cols-3">
+                {contactBenefits.map((item, index) => {
+                  const Icon = item.icon;
+
+                  return (
+                    <Reveal key={item.title} delay={0.06 * index}>
+                      <article className="rounded-[22px] border border-white/10 bg-white/[0.035] px-5 py-5 text-center shadow-[inset_0_1px_0_rgba(255,255,255,0.02)] lg:px-6">
+                        <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full border border-red-500/30 bg-red-500/10 text-red-500">
+                          <Icon className="h-5 w-5" />
+                        </div>
+                        <h3 className="mt-4 font-display text-xl font-black text-white">{item.title}</h3>
+                        <p className="mt-2 text-sm leading-7 text-zinc-400">{item.description}</p>
+                      </article>
+                    </Reveal>
+                  );
+                })}
+              </div>
+
+              <Reveal delay={0.12}>
+                <ContactForm phoneNumber={phoneNumber} whatsappHref={whatsappHref} />
+              </Reveal>
+            </div>
           </div>
         </section>
       </main>

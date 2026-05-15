@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { MessageCircleMore, PhoneCall } from "lucide-react";
+import { MessageCircleMore } from "lucide-react";
 
 type ContactFormProps = {
   phoneNumber: string;
@@ -15,45 +15,31 @@ export function ContactForm({
   const [fullName, setFullName] = useState("");
   const [phone, setPhone] = useState("");
   const [goal, setGoal] = useState("");
+  const [message, setMessage] = useState("");
 
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
-    const message = `היי Reem, קוראים לי ${fullName || "ללא שם"}.\nטלפון: ${
+    const whatsappMessage = `היי ראם, קוראים לי ${fullName || "ללא שם"}.\nטלפון: ${
       phone || "לא נמסר"
-    }\nהמטרה שלי: ${goal || "לא צוינה"}`;
+    }\nהמטרה שלי: ${goal || "לא צוינה"}\nהודעה: ${message || "לא נכתבה הודעה נוספת"}`;
 
     window.open(
-      `${whatsappHref}&text=${encodeURIComponent(message)}`,
+      `${whatsappHref}&text=${encodeURIComponent(whatsappMessage)}`,
       "_blank",
       "noopener,noreferrer",
     );
   }
 
   return (
-    <form
-      onSubmit={handleSubmit}
-      className="glass-card rounded-[28px] p-6 text-right sm:p-8"
-    >
-      <div className="mb-6 flex items-center justify-between gap-4">
-        <div className="text-right">
-          <p className="font-display text-2xl font-black text-white">שלח הודעה</p>
-          <p className="mt-1 text-sm text-zinc-400">
-            ההודעה תיפתח ישירות בוואטסאפ עם הפרטים שלך.
-          </p>
-        </div>
-        <div className="icon-shell shrink-0">
-          <MessageCircleMore className="h-5 w-5" />
-        </div>
-      </div>
-
-      <div className="grid gap-4">
+    <form onSubmit={handleSubmit} className="mx-auto mt-8 w-full max-w-[820px] text-right">
+      <div className="grid gap-4 sm:gap-[18px]">
         <label className="grid gap-2">
           <span className="text-sm font-semibold text-zinc-200">שם מלא</span>
           <input
             value={fullName}
             onChange={(event) => setFullName(event.target.value)}
-            className="rounded-[18px] border border-white/10 bg-black/50 px-4 py-3 text-white outline-none transition placeholder:text-zinc-500 focus:border-red-500/40"
+            className="h-14 rounded-[18px] border border-white/10 bg-black/50 px-5 text-white outline-none transition placeholder:text-zinc-500 focus:border-red-500/40"
             placeholder="השם שלך"
           />
         </label>
@@ -63,7 +49,7 @@ export function ContactForm({
           <input
             value={phone}
             onChange={(event) => setPhone(event.target.value)}
-            className="rounded-[18px] border border-white/10 bg-black/50 px-4 py-3 text-white outline-none transition placeholder:text-zinc-500 focus:border-red-500/40"
+            className="h-14 rounded-[18px] border border-white/10 bg-black/50 px-5 text-white outline-none transition placeholder:text-zinc-500 focus:border-red-500/40"
             placeholder="מספר ליצירת קשר"
             inputMode="tel"
           />
@@ -71,24 +57,54 @@ export function ContactForm({
 
         <label className="grid gap-2">
           <span className="text-sm font-semibold text-zinc-200">מטרה</span>
-          <textarea
+          <select
             value={goal}
             onChange={(event) => setGoal(event.target.value)}
-            className="min-h-32 rounded-[18px] border border-white/10 bg-black/50 px-4 py-3 text-white outline-none transition placeholder:text-zinc-500 focus:border-red-500/40"
-            placeholder="חיטוב, מסת שריר, משמעת, חזרה לכושר..."
+            className="h-14 rounded-[18px] border border-white/10 bg-black/50 px-5 text-white outline-none transition focus:border-red-500/40"
+          >
+            <option value="" className="bg-zinc-950 text-zinc-400">
+              בחר מטרה
+            </option>
+            <option value="חיטוב" className="bg-zinc-950 text-white">
+              חיטוב
+            </option>
+            <option value="עלייה במסת שריר" className="bg-zinc-950 text-white">
+              עלייה במסת שריר
+            </option>
+            <option value="כניסה לשגרה ומשמעת" className="bg-zinc-950 text-white">
+              כניסה לשגרה ומשמעת
+            </option>
+            <option value="שיפור כושר כללי" className="bg-zinc-950 text-white">
+              שיפור כושר כללי
+            </option>
+            <option value="ליווי תזונתי" className="bg-zinc-950 text-white">
+              ליווי תזונתי
+            </option>
+          </select>
+        </label>
+
+        <label className="grid gap-2">
+          <span className="text-sm font-semibold text-zinc-200">הודעה</span>
+          <textarea
+            value={message}
+            onChange={(event) => setMessage(event.target.value)}
+            className="min-h-[132px] rounded-[18px] border border-white/10 bg-black/50 px-5 py-4 text-white outline-none transition placeholder:text-zinc-500 focus:border-red-500/40"
+            placeholder="ספר בקצרה על המטרה שלך, מה חשוב לך, ואיפה אתה רוצה לראות שינוי."
           />
         </label>
       </div>
 
-      <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:justify-end">
-        <button type="submit" className="btn-primary">
+      <div className="mt-6">
+        <button type="submit" className="btn-primary w-full justify-center py-4 text-base">
           <MessageCircleMore className="h-4 w-4" />
-          <span>שלח הודעה</span>
+          <span>שלח הודעה בוואטסאפ</span>
         </button>
-        <a href={`tel:${phoneNumber}`} className="btn-secondary">
-          <PhoneCall className="h-4 w-4 text-red-500" />
-          <span>{phoneNumber}</span>
-        </a>
+        <p className="mt-4 text-center text-sm text-zinc-400">
+          או התקשר:{" "}
+          <a href={`tel:${phoneNumber}`} className="font-semibold text-zinc-200 transition hover:text-white">
+            054-360-0009
+          </a>
+        </p>
       </div>
     </form>
   );
