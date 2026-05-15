@@ -103,10 +103,6 @@ export default function Home() {
           <div className="relative grid gap-6 lg:grid-cols-[1.04fr_0.96fr] lg:items-start">
             <Reveal className="flex flex-col justify-start gap-6 lg:gap-8">
               <div className="space-y-4 text-right">
-                <div className="flex flex-wrap items-center justify-end gap-3">
-                  <span className="badge-chip">Reem Fitness</span>
-                  <span className="badge-chip">אימונים אישיים בפרימיום</span>
-                </div>
                 <h1 className="font-display text-4xl font-black leading-[1.05] text-white sm:text-5xl lg:text-[4.8rem]">
                   תבנה גוף חזק.
                   <br />
