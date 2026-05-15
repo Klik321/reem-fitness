@@ -17,7 +17,7 @@ export const coachMedia = {
     alt: "Reem Fitness wide hero banner",
   },
   heroCutout: {
-    src: "images/reem/hero-cutout.png",
+    src: "images/reem/hero-cutout-cropped.png",
     alt: "Reem hero portrait cutout",
   },
   sideProfile: {
