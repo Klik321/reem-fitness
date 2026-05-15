@@ -152,16 +152,14 @@ export default function Home() {
 
             <Reveal delay={0.12} className="lg:justify-self-start lg:self-start">
               <MediaFrame
-                media={coachMedia.heroWide}
-                className="w-full min-h-[280px] rounded-[30px] border-transparent bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.04),transparent_42%),linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01))] shadow-[0_0_80px_rgba(190,24,39,0.12)] sm:min-h-[340px] lg:min-h-[460px] lg:max-w-[640px]"
+                media={coachMedia.heroCutout}
+                className="w-full min-h-[280px] rounded-[30px] border-transparent bg-transparent shadow-[0_0_90px_rgba(190,24,39,0.14)] sm:min-h-[340px] lg:min-h-[560px] lg:max-w-[700px]"
                 preload
-                sizes="(max-width: 1024px) 100vw, 46vw"
-                objectPosition="center center"
+                sizes="(max-width: 1024px) 100vw, 48vw"
+                objectPosition="center bottom"
                 fit="contain"
                 overlay="none"
                 zoom={false}
-                label="באנר ראשי"
-                hint="שמור כאן את hero-wide.png"
               />
             </Reveal>
           </div>
