@@ -136,19 +136,6 @@ export default function Home() {
                 </a>
               </div>
 
-              <div className="grid gap-3 sm:grid-cols-3">
-                {statsHighlights.map((item, index) => (
-                  <Reveal key={item.title} delay={0.08 * index}>
-                    <article className="glass-card h-full p-4 text-right">
-                      <p className="text-2xl font-black text-white">{item.value}</p>
-                      <p className="mt-1 font-semibold text-zinc-100">{item.title}</p>
-                      <p className="mt-2 text-sm leading-6 text-zinc-400">
-                        {item.description}
-                      </p>
-                    </article>
-                  </Reveal>
-                ))}
-              </div>
             </Reveal>
 
             <Reveal delay={0.12} className="lg:justify-self-start lg:self-start">
@@ -166,20 +153,25 @@ export default function Home() {
             </Reveal>
           </div>
 
-          <div className="relative mt-6 grid gap-4 lg:grid-cols-[0.76fr_0.58fr_0.9fr]">
-            <Reveal delay={0.1}>
-              <MediaFrame
-                media={coachMedia.dumbbellTraining}
-                className="min-h-[280px] rounded-[24px] border-white/10 bg-zinc-950"
-                sizes="(max-width: 1024px) 100vw, 32vw"
-                objectPosition="center"
-                label="אימון עם משקולת"
-                hint="הכנס לכאן תמונת אימון דינמית"
-              />
-            </Reveal>
+          <div className="relative mt-6 grid gap-4 md:grid-cols-3">
+            {statsHighlights.map((item, index) => (
+              <Reveal key={item.title} delay={0.08 * index}>
+                <article className="glass-card h-full min-h-[168px] p-5 text-right lg:p-6">
+                  <p className="text-3xl font-black text-white">{item.value}</p>
+                  <p className="mt-2 font-display text-xl font-black text-zinc-100">
+                    {item.title}
+                  </p>
+                  <p className="mt-3 text-sm leading-7 text-zinc-400">
+                    {item.description}
+                  </p>
+                </article>
+              </Reveal>
+            ))}
+          </div>
 
+          <div className="relative mt-4 grid gap-4 lg:grid-cols-[1.08fr_0.92fr] lg:items-stretch">
             <Reveal delay={0.16}>
-              <article className="glass-card flex h-full flex-col justify-between gap-6 rounded-[24px] p-6 text-right">
+              <article className="glass-card flex h-full flex-col justify-between gap-6 rounded-[24px] p-6 text-right lg:p-8">
                 <div className="space-y-4">
                   <p className="section-kicker">ליווי ממוקד תוצאה</p>
                   {serviceHighlights.slice(0, 3).map((item) => {
@@ -212,9 +204,8 @@ export default function Home() {
             </Reveal>
 
             <Reveal delay={0.22}>
-              <article className="glass-card relative overflow-hidden rounded-[24px] p-6 text-right">
-                <div className="absolute inset-y-0 left-0 hidden w-2/5 bg-[linear-gradient(90deg,rgba(0,0,0,0.9),transparent)] lg:block" />
-                <div className="relative z-10">
+              <article className="glass-card relative flex h-full min-h-[340px] overflow-hidden rounded-[24px] p-6 text-right lg:p-8">
+                <div className="relative z-10 flex h-full items-center">
                   <div className="flex max-w-2xl flex-col gap-4">
                     <p className="section-kicker">מי זה Reem?</p>
                     <h2 className="font-display text-2xl font-black text-white">
